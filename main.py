@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from flask import Flask, render_template, request
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
 import bs4 as bs
@@ -15,7 +15,7 @@ vectorizer = pickle.load(open('tranform.pkl','rb'))
 
 def create_similarity():
     data = pd.read_csv('main_data.csv')
-    cv = CountVectorizer()
+    cv = TfidfVectorizer()
     count_matrix = cv.fit_transform(data['comb'])
     similarity = cosine_similarity(count_matrix)
     return data,similarity

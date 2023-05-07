@@ -11,7 +11,9 @@ pandas>=0.19
 beautifulsoup4==4.9.1
 jsonschema==3.2.0
 tmdbv3api==1.6.1
-lxml==4.6.3
+lxml
 urllib3==1.25.9
 requests==2.23.0
 pickleshare==0.7.5
+itsdangerous==2.0.1
+matplotlib
